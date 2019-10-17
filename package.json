@@ -1,0 +1,22 @@
+{
+  "name": "security-army-knife",
+  "version": "1.0.0",
+  "description": "One application for security tools",
+  "main": "dist/main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": "https://github.com/plusplus7/security-army-knife",
+  "keywords": [
+    "Electron",
+    "Security"
+  ],
+  "author": "GitHub",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^6.0.7",
+    "gulp": "^4.0.0",
+    "gulp-typescript": "^5.0.1",
+    "typescript": "^3.6.4"
+  }
+}
