@@ -1,0 +1,11 @@
+#slidebar .item {
+  color: gray;
+  text-align: center;
+}
+#slidebar .item-active {
+  color: black;
+  font-weight: bold;
+}
+#topbar {
+  height: 10px;
+}
