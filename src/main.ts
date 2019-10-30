@@ -1,18 +1,24 @@
 // Modules to control application life and create native browser window
-const { app, BrowserWindow } = require('electron');
-const path = require('path');
+import { app, ipcMain, BrowserWindow } from 'electron';
+import * as path from 'path';
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
-let mainWindow = null;
+let mainWindow: any = null;
 
 function createWindow () {
+  ipcMain.on('custom-message', (event: any, message: any) => {
+    console.log(event);
+    console.log(message);
+
+  }); 
+
   // Create the browser window.
   mainWindow = new BrowserWindow({
     width: 800,
     height: 600,
     webPreferences: {
-      preload: path.join(__dirname, 'preload.js'),
+      preload: path.join(__dirname, 'preload.js')
     }
   })
 

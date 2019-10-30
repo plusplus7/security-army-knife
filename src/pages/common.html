@@ -1,6 +1,21 @@
-<div>
+<template id="template-common">
+    <script type="text/javascript">
+        var currentAlgo = "Base64";
+        function clickalgorithm(algorithm) {
+            $("#algorithm-dropdown").text(algorithm); currentAlgo = algorithm;
+        }
+        clickalgorithm(currentAlgo);
+        function inputChanged() {
+            var input = $('#input')[0].value;
+            if (currentAlgo == 'Base64') {
+                $('#output')[0].value = btoa(input);
+            } else if (currentAlgo == 'Base58') {
+                $('#output')[0].value = "Not implemented yet.";
+            }
+        }
+    </script>
     <div class="input-group">
-        <input id="common-tool-input" type="text" class="form-control" aria-label="input">
+        <input id="input" type="text" class="form-control" aria-label="input" onkeyup="inputChanged()">
         <div class="input-group-append">
             <button id="algorithm-dropdown" class="btn btn-outline-secondary dropdown-toggle" type="button"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Base64</button>
@@ -16,15 +31,9 @@
             <input id="output" type="text" class="form-control" placeholder="Output" aria-label="Output"
                 aria-describedby="output">
             <div class="input-group-append">
-                <button class="btn btn-outline-secondary" type="button" onclick="sak_oncopy($('#output'))"">Copy</button>
-        </div>
-    </div>
-    <script src=" ./dist/copy.js"> </script>
-    <script type="text/javascript">
-        var currentAlgo = "Base64"; function clickalgorithm(algorithm) {
-            console.log(algorithm);
-            $("#algorithm-dropdown").text(algorithm); currentAlgo = algorithm;
-        } clickalgorithm(currentAlgo);
-    </script>
+                <button class="btn btn-outline-secondary" type="button" onclick="dispatch_event('CLIPBOARD_COPY', $('#output')[0].value)">Copy</button>
             </div>
         </div>
+    </div>
+    
+</template>
