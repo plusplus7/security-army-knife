@@ -1,15 +1,41 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Hello World!</title>
-  </head>
-  <body>
-    <h1>Hello World!</h1>
-    We are using Node.js <span id="node-version"></span>,
-    Chromium <span id="chrome-version"></span>,
-    and Electron <span id="electron-version"></span>.
 
-    <script src="./dist/main.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <title>Hello World!</title>
+  <link rel="stylesheet" href="./dist/css/framework.css" />
+  <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css" />
+  <link rel="import" href="./dist/common.html">
+  <link rel="import" href="./dist/mfa.html">
+</head>
+
+<body onload="loadbody()">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col" id="topbar">
+              <div class="progress" style="height: 10px;">
+                  <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0"
+                      aria-valuemax="100"></div>
+              </div>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-2">
+              <div id="slidebar">
+                  <p id="tl-common" class="item" onclick="switchTemplate('template-common')">Common</p>
+                  <hr/>
+                  <p id="tl-mfa" class="item" onclick="switchTemplate('template-mfa')">MFA</p>
+              </div>
+          </div>
+          <main class="col" id="dynamic-content">
+          </main>
+      </div>
+  </div>
+  <script src="./dist/renderer.js"></script>
+  <script src="./dist/base58.js"></script>
+  <script type="text/javascript" src="./node_modules/jquery/dist/jquery.js"></script>
+  <script type="text/javascript" src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
 </html>

@@ -1,6 +1,7 @@
 {
     "files": [
-        "src/main.ts"
+        "src/*.ts",
+        "src/messages/*.ts"
     ],
     "compilerOptions": {
         "noImplicitAny": true,

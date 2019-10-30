@@ -4,7 +4,7 @@
   "description": "One application for security tools",
   "main": "dist/main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "gulp && electron ."
   },
   "repository": "https://github.com/plusplus7/security-army-knife",
   "keywords": [
@@ -15,8 +15,14 @@
   "license": "MIT",
   "devDependencies": {
     "electron": "^6.0.7",
-    "gulp": "^4.0.0",
+    "gulp": "^4.0.0"
+  },
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "gulp-less": "^4.0.1",
     "gulp-typescript": "^5.0.1",
+    "jquery": "^3.4.1",
+    "popper.js": "^1.16.0",
     "typescript": "^3.6.4"
   }
 }
