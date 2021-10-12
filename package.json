@@ -14,7 +14,7 @@
   "author": "GitHub",
   "license": "MIT",
   "devDependencies": {
-    "electron": "^6.0.7",
+    "electron": "^11.5.0",
     "gulp": "^4.0.0"
   },
   "dependencies": {
